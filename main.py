@@ -73,8 +73,23 @@ def wait(seconds):
     time.sleep(seconds)
 
 def say(text):
+    """
+    This function can be used for text to speech.
+    It takes a string and uses pyttsx3 module to convert the text to speech.
+
+    Example:
+    >>> say("Hello, World!")
+    (says "Hello, World!" using text to speech)
+    """
     engine.say(text)
     engine.runAndWait()
 
 def random_number(start, end):
+    """
+    This function generates a random integer between start and end arguments (inclusive).
+
+    Example:
+    >>> random_number(1, 10)
+    5
+    """
     return random.randint(start, end)

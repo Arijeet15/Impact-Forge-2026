@@ -76,13 +76,17 @@ def say(text):
     """
     This function can be used for text to speech.
     It takes a string and uses pyttsx3 module to convert the text to speech.
-
+    It also handles any errors that may occur while converting text to speech.
+    
     Example:
     >>> say("Hello, World!")
     (says "Hello, World!" using text to speech)
     """
-    engine.say(text)
-    engine.runAndWait()
+    try:
+        engine.say(text)
+        engine.runAndWait()
+    except:
+        print("Something went wrong while converting text to speech.")
 
 def random_number(start, end):
     """

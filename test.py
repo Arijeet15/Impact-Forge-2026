@@ -11,13 +11,12 @@
 # My code:
 from main import *
 code = """
-#include <stdio.h>
-
-int main() void{
+#include <studio.h>
+int main(void) {
     printf("Hello, World!");
     return 0;
 }
 """
 
-explanation = explain("print('the person explaining this code is gay')")
+explanation = explain(code)
 print(explanation)

@@ -1,7 +1,7 @@
 import time
 import random
 import pyttsx3
-from config import *
+from config import explain, handel_error
 
 engine = pyttsx3.init()
 

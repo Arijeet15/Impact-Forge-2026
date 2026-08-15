@@ -1,10 +1,13 @@
 import time
 import random
 import pyttsx3
-from config import explain, handel_error
+from config import explain, handle_error, handle_error
+import sys
 
-engine = pyttsx3.init()
 
+engine = pyttsx3.init() #tts engine initialization
+
+#Functions
 def ask(question):
     """
     This function is similar to scratch's 'ask' block.
@@ -98,3 +101,11 @@ def random_number(start, end):
     5
     """
     return random.randint(start, end)
+
+#Error handeling
+_original_excepthook = sys.excepthook
+
+def _excepthook(exc_type, exc_value, exc_traceback):
+    handle_error(exc_type, exc_value, exc_traceback)
+
+sys.excepthook = _excepthook

@@ -10,13 +10,15 @@
 
 # My code:
 from main import *
-code = """
-#include <studio.h>
-int main(void) {
-    printf("Hello, World!");
-    return 0;
-}
-"""
+# code = """
+# #include <studio.h>
+# int main(void) {
+#     printf("Hello, World!");
+#     return 0;
+# }
+# """
 
-explanation = explain(code)
-print(explanation)
+# explanation = explain(code)
+# print(explanation)
+
+a = 12/0

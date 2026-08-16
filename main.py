@@ -73,7 +73,7 @@ def forever(action, /, *args, **kwargs):
     while True:
         action(*args, **kwargs)
 
-def wait(seconds: int):
+def wait(seconds):
     """
     This function is similar to Scratch's "wait" block.
     It takes a number of seconds and pauses the program for that amount of

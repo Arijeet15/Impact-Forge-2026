@@ -296,7 +296,6 @@ beyondblocks/
 tests/
 ├── v1/
 ├── v2/
-└── integration/
 
 examples/
 docs/
@@ -329,7 +328,7 @@ The project was tested in multiple stages:
 
 - **V1:** normal function-level behavior
 - **V2:** edge cases, unusual inputs, parameters, and attempts to break assumptions
-- **Environment testing:** local machine, another computer, downloaded ZIP copy, and a fresh GitHub Codespace
+- **Environment testing:** local machine, downloaded ZIP copy, and a fresh GitHub Codespace
 - **AI testing:** `explain()` was tested through the configured Codespace environment
 
 Integration testing is intentionally lightweight in the current version; the main testing effort was focused on the individual functions and validating the package in real environments.

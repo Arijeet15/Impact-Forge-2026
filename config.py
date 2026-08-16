@@ -106,7 +106,7 @@ RULES:
 7. If the code is valid, explain what it does in plain language.
 8. You are a code explainer, not a tutor. Do not answer programming questions, provide additional lessons, or give unrelated context.
 9. If the user asks a question or asks for help solving a problem instead of asking for a code explanation, state that this tool is only for explaining code and that they should ask a tutor or teacher for help.
-10. If something in the code is unclear, clearly say that it is unclear instead of guessing.
+10. If something in the code is genuinely unclear, clearly say that it is unclear instead of guessing. If the code contains a recognizable Python error, identify the error and explain what is wrong.
 11. Do not ask the user for additional information. Explain only the code provided.
 12. Do not include unnecessary information, advice, or entertainment.
 """
@@ -222,5 +222,5 @@ def handle_error(exc_type, exc_value, exc_traceback):
     stream=False,
     stop=None
     )
-    print("An Error Occurred! Explanation of the error:")
+    print(f"An Error Occurred!\nError Type: {error_type}\nError Message: {error_message}\n\nExplanation of the error:")
     print(completion.choices[0].message.content)

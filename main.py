@@ -120,7 +120,7 @@ def _excepthook(exc_type, exc_value, exc_traceback):
     try:
         handle_error(exc_type, exc_value, exc_traceback)
     except Exception as e:
-        print("An Error Occurred!")
+        print(f"An Error Occurred!\nError Type: {exc_type.__name__}\nError Message: {str(exc_value)}")
         print("Error can't be explained at this moment because of the reason below:")
         print(e)
 

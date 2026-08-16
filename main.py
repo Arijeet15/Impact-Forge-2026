@@ -32,13 +32,14 @@ def ask(question):
         except ValueError:
             return answer
 
-def repeat(times, action, /, *args, **kwargs):
+def repeat(times: int, action, /, *args, **kwargs):
     """
     This function is similar to Scratch's "repeat" block.
     It takes the number of times to repeat and a function to call as arguments,
     then calls that function the specified number of times. It is designed to
     help programmers avoid getting confused by the syntax of Python's for loops
     so they can focus on the logic of their program.
+    The function raises a ValueError if the times argument is a negative integer.
 
     Example:
     >>> def say_hello():
@@ -48,6 +49,9 @@ def repeat(times, action, /, *args, **kwargs):
     Hello!
     Hello!
     """
+    if type(times) is int and times < 0:
+        raise ValueError("times argument cannot be negative")
+
     for _ in range(times):
         action(*args, **kwargs)
 
@@ -69,7 +73,7 @@ def forever(action, /, *args, **kwargs):
     while True:
         action(*args, **kwargs)
 
-def wait(seconds):
+def wait(seconds: int):
     """
     This function is similar to Scratch's "wait" block.
     It takes a number of seconds and pauses the program for that amount of
@@ -98,7 +102,7 @@ def say(text):
     except Exception:
         print("Something went wrong while converting text to speech.")
 
-def random_number(start, end):
+def random_number(start: int, end: int):
     """
     This function generates a random whole number between the start and end
     values, including both.

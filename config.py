@@ -34,6 +34,7 @@ forever(action, *args, **kwargs)
 - Syntax: forever(action, *args, **kwargs)
 - Input: action = function to execute; *args/**kwargs = optional arguments passed to action.
 - Behavior: Executes action continuously until the program is stopped.
+- Constraint: times must be a non-negative integer. Negative integer values raise ValueError.
 - Example: forever(say, "Hello")
 
 wait(seconds)

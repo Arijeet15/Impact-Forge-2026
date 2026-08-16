@@ -1,6 +1,6 @@
-# API Reference
+# Library Functions
 
-This document describes the public Beyond Blocks API.
+This document describes the public Beyond Blocks API/Functions of the Beyond Blocks Library.
 
 | Function | Purpose |
 |---|---|

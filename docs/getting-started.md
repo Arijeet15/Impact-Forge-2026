@@ -109,7 +109,7 @@ Never commit a real API key.
 
 ## 6. Where to go next
 
-- Function behavior → [API Reference](api-reference.md)
+- Function behavior → [Library Functions](library_functions.md)
 - AI behavior/configuration → [AI Features](ai-features.md)
 - Architecture → [Architecture](architecture.md)
 - Testing → [Testing](testing.md)

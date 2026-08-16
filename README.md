@@ -25,8 +25,6 @@ Use this README to answer the first questions:
 
 The README gives the essentials. The detailed documentation contains the full reference.
 
-[Click here to watch the project demo video](https://youtu.be/QxHON8Waj_Y)
-
 ---
 
 ## What is Beyond Blocks?

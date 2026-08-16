@@ -1,7 +1,7 @@
 import time
 import random
 import pyttsx3
-from config import explain, handle_error, handle_error
+from config import explain, handle_error
 import sys
 
 
@@ -89,7 +89,7 @@ def say(text):
     try:
         engine.say(text)
         engine.runAndWait()
-    except:
+    except Exception:
         print("Something went wrong while converting text to speech.")
 
 def random_number(start, end):
@@ -106,6 +106,11 @@ def random_number(start, end):
 _original_excepthook = sys.excepthook
 
 def _excepthook(exc_type, exc_value, exc_traceback):
-    handle_error(exc_type, exc_value, exc_traceback)
+    try:
+        handle_error(exc_type, exc_value, exc_traceback)
+    except Exception as e:
+        print("An Error Occurred!")
+        print("Error can't be explained at this moment because of the reason below:")
+        print(e)
 
 sys.excepthook = _excepthook

@@ -141,28 +141,58 @@ The error info will be given in the user messaage.
 """
 
 def explain(code_block):
-    completion = client.chat.completions.create(
-    model="llama-3.3-70b-versatile",
-    messages=[
-        {
-                "role": "system",
-                "content": explain_system_prompt
-        },
-        {
-            "role": "user",
-            "content": f"The code is:{code_block}"
-        }
-    ],
-    temperature=1,
-    max_completion_tokens=1024,
-    top_p=1,
-    stream=False,
-    stop=None
-    )
+    """
+    This a LLM powerd function which takes a code block as input and returns the explanation of the code
+    in plain language, step by step in order.
+    It uses the Groq API and Llama model to generate the explanation based on the provided code block
+    and the system prompt.
 
-    return completion.choices[0].message.content
+    Example:
+    >>> explain("x = random_number(1, 10)")
+    'This line of code generates a random whole number between 1 and 10, inclusive, and assigns it to
+    the variable x. It is similar to Scratch's "pick random" block.'
+    """
+    try:
+        completion = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[
+            {
+                    "role": "system",
+                    "content": explain_system_prompt
+            },
+            {
+                "role": "user",
+                "content": f"The code is:{code_block}"
+            }
+        ],
+        temperature=1,
+        max_completion_tokens=1024,
+        top_p=1,
+        stream=False,
+        stop=None
+        )
+
+        return completion.choices[0].message.content
+    except Exception as e:
+        print("Something went wrong while explaining the code. Dont worry, this is an internal error and not your fault. The error is below:")
+        print(f"Error: {e}")
 
 def handle_error(exc_type, exc_value, exc_traceback):
+    """
+    This function is an INTERNAL function and is NOT part of the user-facing API. It is automatically
+    triggered by the library when an uncaught runtime error occurs in the user's program.
+    It receives information about the error, including its type, message, and traceback.
+    Its purpose is to explain the error in simple, beginner-friendly language, identify where the error
+    occurred when possible, and provide a useful conceptual hint. It must NOT provide the exact
+    solution, corrected code, or directly solve the user's problem. It does NOT handle syntax errors
+    that prevent the user's program from starting. It does NOT handle errors that the user's own
+    try/except block has already caught.
+
+    Example:
+    x = 5/0  # This will raise a ZeroDivisionError
+    (The handle_error function will be automatically triggered and will explain the error
+    in plain language.)
+    """
     error_type = exc_type.__name__
     error_message = str(exc_value)
 
@@ -187,5 +217,6 @@ def handle_error(exc_type, exc_value, exc_traceback):
     stream=False,
     stop=None
     )
-    print("Something went wrong! Explanation of the error:")
+    print("An Error Occurred! Explanation of the error:")
     print(completion.choices[0].message.content)
+    

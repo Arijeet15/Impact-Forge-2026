@@ -1,6 +1,6 @@
 # Beyond Blocks
 
-A beginner-friendly Python library for helping learners move from block-based programming to Python.
+A beginner-friendly Python library/module for helping learners move from block-based programming to Python.
 
 Beyond Blocks keeps the learner in **real Python** while providing simple functions for concepts commonly introduced through block-based programming.
 

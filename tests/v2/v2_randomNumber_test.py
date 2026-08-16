@@ -1,4 +1,4 @@
-from main import random_number
+from beyondblocks.core import random_number
 
 random_tests = [
     (1, 10),

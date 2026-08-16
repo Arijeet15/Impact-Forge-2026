@@ -1,4 +1,4 @@
-from main import ask
+from beyondblocks.core import ask
 
 name = ask("What is your name? ")
 age = ask("What is your age? ")

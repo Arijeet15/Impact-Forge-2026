@@ -1,4 +1,4 @@
-from main import *
+from beyondblocks.core import *
 
 # PART 1 — TypeError
 """

@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: beyondblocks
+Version: 0.1.0
+Summary: A beginner-friendly Python library that helps learners transition from block-based programming to Python.
+Requires-Python: >=3.10
+Requires-Dist: pyttsx3
+Requires-Dist: groq
+Requires-Dist: python-dotenv

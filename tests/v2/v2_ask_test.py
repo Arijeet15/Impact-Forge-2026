@@ -1,4 +1,4 @@
-from main import ask
+from beyondblocks.core import ask
 
 # Testing different type of inputs and checking if the asigned variable is of the correct data type or not:
 

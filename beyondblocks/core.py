@@ -1,7 +1,7 @@
 import time
 import random
 import pyttsx3
-from config import explain, handle_error
+from .config import explain, handle_error
 import sys
 
 

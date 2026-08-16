@@ -2,11 +2,18 @@ from groq import Groq
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-
-client = Groq(
-    api_key=os.getenv("GROQ_API_KEY")
-)
+def _get_client():
+    load_dotenv()
+    
+    api_key = os.getenv("GROQ_API_KEY")
+    
+    if not api_key:
+        raise RuntimeError(
+            "GROQ_API_KEY is not configured. "
+            "Set it as an environment variable to use AI features."
+        )
+    
+    return Groq(api_key=api_key)
 
 MODEL = "llama-3.3-70b-versatile"
 
@@ -158,6 +165,7 @@ def explain(code_block):
     the variable x. It is similar to Scratch's "pick random" block.'
     """
     try:
+        client = _get_client()
         completion = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
@@ -198,6 +206,8 @@ def handle_error(exc_type, exc_value, exc_traceback):
     (The handle_error function will be automatically triggered and will explain the error
     in plain language.)
     """
+    client = _get_client()
+    
     error_type = exc_type.__name__
     error_message = str(exc_value)
 

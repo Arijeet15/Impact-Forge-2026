@@ -1,4 +1,4 @@
-from main import random_number, repeat
+from beyondblocks.core import random_number, repeat
 
 def print_random_number():
     number = random_number(1, 100)

@@ -1,4 +1,4 @@
-from main import repeat
+from beyondblocks.core import repeat
 
 def greet(name):
     print(f"Hello, {name}!")

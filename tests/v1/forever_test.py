@@ -1,4 +1,4 @@
-from main import forever
+from beyondblocks.core import forever
 
 def compliment(name, name2):
     print(f"{name}, {name2}, you both are awesome, thats why i am repeating this forever!")

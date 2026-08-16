@@ -1,4 +1,4 @@
-from main import wait
+from beyondblocks.core import wait
 
 wait_values = [
     0,

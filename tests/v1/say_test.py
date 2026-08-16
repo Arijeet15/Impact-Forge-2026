@@ -1,4 +1,4 @@
-from main import say
+from beyondblocks.core import say
 
 say("Hello, World!")
 

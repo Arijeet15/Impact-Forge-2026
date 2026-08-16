@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beyondblocks"
+version = "0.1.0"
+description = "A beginner-friendly Python library that helps learners transition from block-based programming to Python."
+requires-python = ">=3.10"
+dependencies = [
+    "pyttsx3",
+    "groq",
+    "python-dotenv",
+]
+
+[tool.setuptools.packages.find]
+include = ["beyondblocks*"]

@@ -1,4 +1,4 @@
-from main import repeat
+from beyondblocks.core import repeat
 
 # Part 1: Testing repeat function with different inputs for 'times' parameter and checking if the output is as expected:
 

@@ -1,4 +1,4 @@
-from main import explain
+from beyondblocks.core import explain
 
 code1 = """
 print("Hello World")

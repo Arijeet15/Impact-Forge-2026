@@ -10,11 +10,12 @@ engine = pyttsx3.init() #tts engine initialization
 #Functions
 def ask(question):
     """
-    This function is similar to scratch's 'ask' block.
-    It takes a input from the user using python input function, but to keep things simple for the programmer handels
-    the data type itself for Numbers & Text unlike python's built in input function so that the programmer can focus
-    on there transition from block based coding to real world programming without worrying about these minor things
-    which they will learn later.
+    This function is similar to Scratch's "ask and wait" block.
+    It takes input from the user using Python's input() function. To keep things
+    simple for the programmer, it automatically handles the data type for numbers
+    and text, unlike Python's built-in input() function. This allows the programmer
+    to focus on transitioning from block-based coding to real-world programming
+    without worrying about these details, which they will learn later.
 
     Example:
     >>> ask("What is your name?")
@@ -33,9 +34,11 @@ def ask(question):
 
 def repeat(times, action, /, *args, **kwargs):
     """
-    This function is similar to scratch's 'repeat' block.
-    It takes a number of times to repeat and a function to call as arguments and calls the function the specified number of times.
-    It is there so that the programmer dont gets confused with the syntax of for loops in python and can focus on the logic of the program.
+    This function is similar to Scratch's "repeat" block.
+    It takes the number of times to repeat and a function to call as arguments,
+    then calls that function the specified number of times. It is designed to
+    help programmers avoid getting confused by the syntax of Python's for loops
+    so they can focus on the logic of their program.
 
     Example:
     >>> def say_hello():
@@ -50,8 +53,9 @@ def repeat(times, action, /, *args, **kwargs):
 
 def forever(action, /, *args, **kwargs):
     """
-    This function is similar to scratch's 'forever' block.
-    It takes a function, and calls it in a infinite loop using while(True).
+    This function is similar to Scratch's "forever" block.
+    It takes a function and calls it repeatedly in an infinite loop using
+    Python's while loop.
 
     Example:
     >>> def say_hello():
@@ -60,31 +64,33 @@ def forever(action, /, *args, **kwargs):
     Hello!
     Hello!
     Hello!
-    ... (infinite times)
+    ... (continues indefinitely)
     """
     while True:
         action(*args, **kwargs)
 
 def wait(seconds):
     """
-    This function is similar to scratch's 'wait' block.
-    It takes number of seconds and uses time module's sleep function to wait for that many seconds.
+    This function is similar to Scratch's "wait" block.
+    It takes a number of seconds and pauses the program for that amount of
+    time.
 
     Example:
     >>> wait(2)
-    (waits 2 seconds)
+    (waits for 2 seconds)
     """
     time.sleep(seconds)
 
 def say(text):
     """
-    This function can be used for text to speech.
-    It takes a string and uses pyttsx3 module to convert the text to speech.
-    It also handles any errors that may occur while converting text to speech.
+    This function is similar to Python's print() function, but instead of
+    displaying the text, it speaks the text aloud using text-to-speech.
+    If an error occurs while converting the text to speech, it displays
+    a simple error message.
 
     Example:
     >>> say("Hello, World!")
-    (says "Hello, World!" using text to speech)
+    (speaks "Hello, World!" using text-to-speech)
     """
     try:
         engine.say(text)
@@ -94,7 +100,8 @@ def say(text):
 
 def random_number(start, end):
     """
-    This function generates a random integer between start and end arguments (inclusive).
+    This function generates a random whole number between the start and end
+    values, including both.
 
     Example:
     >>> random_number(1, 10)
